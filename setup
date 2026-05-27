@@ -1,0 +1,43 @@
+2. Initialize the Mobile Environment
+Open your terminal inside the root directory (my-lottery-app/) and execute the configuration installation:
+
+Bash
+# Initialize npm project structure
+npm init -y
+
+# Install Core Capacitor packages
+npm install @capacitor/core @capacitor/cli
+
+# Initialize your application configurations
+npx cap init "MI Lottery Analytics" "com.milottery.analytics" --web-dir=www
+3. Attach Target Mobile Platforms
+Add the specific native platforms you plan to compile for:
+
+Bash
+# Install platform engines
+npm install @capacitor/android @capacitor/ios
+
+# Add platforms to your project build directory
+npx cap add android
+npx cap add ios
+4. Sync and Build
+Every time you make adjustments to your code inside the www/index.html file, run the sync command to push updates into your native Android/iOS IDE compilation environments:
+
+Bash
+npx cap sync
+5. Open in Native Tooling
+Launch the project inside Android Studio or Xcode to compile, run on simulated test devices, or generate production .apk or .ipa bundle binaries for App Store distribution:
+
+Bash
+npx cap open android
+npx cap open ios
+Necessary Mobile Optimization Adjustments
+Before compiling, you should make a few minor layout adjustments to your index.html file to ensure a flawless mobile user experience:
+
+Viewport Adjustments: Add viewport-fit=cover into your viewport meta tag to ensure your interface layout extends smoothly behind mobile camera notches and native bottom gesture bars:
+
+HTML
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+Touch Optimization: Add user-select: none; and remove -webkit-app-region: drag; (which is only for Electron desktop window dragging environments) so that the app behaves correctly when scrolled or tapped on mobile screens.
+
+Responsive Layouts: Change the grid patterns and side navigation setups to scale correctly on narrow mobile viewports. For example, change .layout to flex-direction: column; on mobile screens so the sidebar drops cleanly down to a bottom tab configuration or a collapsable menu drawer.
