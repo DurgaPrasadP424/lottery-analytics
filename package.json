@@ -1,0 +1,26 @@
+{
+  "name": "lottery-analytics-mobile",
+  "version": "1.0.0",
+  "description": "Mobile statistical simulation and analytical matrix dashboard",
+  "main": "www/index.html",
+  "scripts": {
+    "init-cap": "npx cap init \"Lottery Analytics\" \"com.lottery.analytics.app\" --web-dir=www",
+    "sync": "npx cap sync",
+    "open:android": "npx cap open android",
+    "open:ios": "npx cap open ios"
+  },
+  "keywords": [
+    "capacitor",
+    "mobile",
+    "webview"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/cli": "^6.2.1",
+    "@capacitor/core": "^6.2.1",
+    "@capacitor/ios": "^6.2.1"
+  },
+  "type": "commonjs"
+}
